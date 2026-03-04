@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | SmartLearn</title>
+    <meta name="description" content="Create a new SmartLearn account to start your learning journey.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="alternate icon" href="assets/favicon.svg">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Auth Specific Style -->
+    <link rel="stylesheet" href="css/auth.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="auth-header">
+                <a href="index.html" class="auth-logo">
+                    <img src="assets/logo.png" alt="SmartLearn Logo">
+                    Smart<span>Learn</span>
+                </a>
+                <h1 class="auth-title">Sign Up</h1>
+                <p class="auth-subtitle">Join us and start learning today</p>
+            </div>
+
+            <!-- Enrollment Banner (Hidden by default) -->
+            <div id="enrollment-banner"
+                style="display: none; background: var(--primary-light); padding: 1.2rem; border-radius: 15px; margin-bottom: 2rem; border: 1px solid var(--primary); text-align: center;">
+                <p style="color: var(--secondary); font-weight: 700; margin-bottom: 0.2rem; font-size: 0.95rem;">
+                    Applying
+                    for:</p>
+                <h4 id="program-name" style="color: var(--primary-dark); font-size: 1.1rem; font-weight: 800;">Program
+                    Name</h4>
+            </div>
+
+            <!-- Sign Up Form -->
+            <form id="signup-form" onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" name="name" class="form-input" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" name="email" class="form-input" placeholder="name@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" name="password" class="form-input" placeholder="Create a password"
+                            required>
+                        <i class="far fa-eye password-toggle" onclick="togglePassword(this)"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Confirm Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" name="confirm_password" class="form-input"
+                            placeholder="Confirm your password" required>
+                        <i class="far fa-eye password-toggle" onclick="togglePassword(this)"></i>
+                    </div>
+                </div>
+
+                <button type="submit" class="auth-btn">Sign Up</button>
+            </form>
+
+            <!-- Navigation Link -->
+            <div class="auth-footer">
+                Already have an account? <a href="login.html" class="auth-link">Log In</a>
+            </div>
+
+            <div style="text-align: center; margin-top: 1.5rem;">
+                <a href="index.html"
+                    style="font-size: 0.9rem; color: var(--text-muted); font-weight: 500; text-decoration: none;">
+                    <i class="fas fa-arrow-left" style="margin-right: 0.5rem;"></i> Back to Home
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleRegister(e) {
+            e.preventDefault();
+
+            const formData = new FormData(e.target);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const password = formData.get('password');
+            const confirmPassword = formData.get('confirm_password');
+
+            // Basic Validation
+            if (password !== confirmPassword) {
+                showToast('Error', 'Passwords do not match', 'error');
+                return;
+            }
+
+            if (password.length < 6) {
+                showToast('Error', 'Password must be at least 6 characters', 'error');
+                return;
+            }
+
+            // Simulate successful registration
+            localStorage.setItem('user', name);
+
+            showToast(
+                'Account Created!',
+                `Welcome ${name}! Redirecting to login...`,
+                'success'
+            );
+
+            // Redirect to login page after 2 seconds
+            setTimeout(() => {
+                window.location.href = 'login.html';
+            }, 2000);
+        }
+
+        function showToast(title, message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+
+            let iconClass = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
+
+            toast.innerHTML = `
+                <div class="toast-icon">
+                    <i class="fas ${iconClass}"></i>
+                </div>
+                <div class="toast-content">
+                    <h4>${title}</h4>
+                    <p>${message}</p>
+                </div>
+                <button class="toast-close" onclick="closeToast(this)">
+                    <i class="fas fa-times"></i>
+                </button>
+            `;
+
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                closeToast(toast.querySelector('.toast-close'));
+            }, 5000);
+        }
+
+        function closeToast(button) {
+            const toast = button.closest('.toast');
+            toast.classList.add('hiding');
+            setTimeout(() => {
+                toast.remove();
+            }, 300);
+        }
+
+        function togglePassword(icon) {
+            // Find the input element within the same wrapper
+            const wrapper = icon.parentElement;
+            const input = wrapper.querySelector('input');
+
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+
+        // Check for program enrollment on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const program = urlParams.get('program');
+
+            if (program) {
+                const banner = document.getElementById('enrollment-banner');
+                const programName = document.getElementById('program-name');
+                if (banner && programName) {
+                    programName.textContent = program;
+                    banner.style.display = 'block';
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

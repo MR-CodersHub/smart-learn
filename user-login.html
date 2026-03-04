@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login | SmartLearn</title>
+    <meta name="description" content="Log in to your SmartLearn student account to access your courses.">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="alternate icon" href="assets/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .user-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--primary-light, #d1fae5);
+            color: var(--primary);
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 0.28rem 0.8rem;
+            border-radius: 20px;
+            margin: 0;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .demo-btn {
+            width: 100%;
+            padding: 0.65rem 1rem;
+            background: var(--primary-light, #d1fae5);
+            border: 1.5px dashed var(--primary);
+            border-radius: 12px;
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-bottom: 1rem;
+        }
+
+        .demo-btn:hover {
+            background: rgba(16, 185, 129, 0.15);
+        }
+
+        .error-msg {
+            background: #fee2e2;
+            color: #dc2626;
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            font-size: 0.88rem;
+            margin-bottom: 1rem;
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .error-msg.visible {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="toast-container" id="toast-container"></div>
+
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="auth-header">
+                <div
+                    style="display: flex; align-items: center; justify-content: center; gap: 0.85rem; margin-bottom: 1.25rem; flex-wrap: wrap;">
+                    <a href="login.html" class="auth-logo" style="margin-bottom: 0;">
+                        <img src="assets/logo.png" alt="SmartLearn Logo">
+                        Smart<span>Learn</span>
+                    </a>
+                    <div class="user-badge"><i class="fas fa-user-graduate"></i> Student Portal</div>
+                </div>
+                <h1 class="auth-title">Student Login</h1>
+                <p class="auth-subtitle">Welcome back! Continue your learning journey</p>
+            </div>
+
+            <!-- Error Message -->
+            <div class="error-msg" id="error-msg">
+                <i class="fas fa-exclamation-circle"></i>
+                <span id="error-text">Invalid credentials.</span>
+            </div>
+
+            <!-- User Login Form -->
+            <form id="user-login-form" onsubmit="handleUserLogin(event)">
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" id="user-email" class="form-input" placeholder="student@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="user-password" class="form-input" placeholder="••••••••" required>
+                        <i class="far fa-eye password-toggle" onclick="togglePassword(this)"></i>
+                    </div>
+                </div>
+                <!-- Forgot Password -->
+                <div class="forgot-row">
+                    <a href="reset-password.html" class="forgot-link">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="auth-btn">
+                    <i class="fas fa-sign-in-alt"></i> Sign In
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                Don't have an account? <a href="signup.html" class="auth-link">Sign Up</a>
+            </div>
+            <a href="login.html" class="auth-back">
+                <i class="fas fa-arrow-left"></i> Back to Login
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function handleUserLogin(e) {
+            e.preventDefault();
+
+            const email = document.getElementById('user-email').value.trim();
+            const password = document.getElementById('user-password').value.trim();
+            const errorBox = document.getElementById('error-msg');
+            const errorText = document.getElementById('error-text');
+
+            errorBox.classList.remove('visible');
+
+            // Only check that fields are not empty — no specific credential validation
+            if (!email || !password) {
+                errorText.textContent = 'Please enter email and password.';
+                errorBox.classList.add('visible');
+                return;
+            }
+
+            // Success — redirect immediately to user dashboard
+            localStorage.setItem('smartlearn_role', 'user');
+            localStorage.setItem('smartlearn_user', email);
+            window.location.href = 'user-dashboard.html';
+        }
+
+        function showToast(title, message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            let iconClass = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
+            toast.innerHTML = `
+                <div class="toast-icon"><i class="fas ${iconClass}"></i></div>
+                <div class="toast-content"><h4>${title}</h4><p>${message}</p></div>
+                <button class="toast-close" onclick="closeToast(this)"><i class="fas fa-times"></i></button>
+            `;
+            container.appendChild(toast);
+            setTimeout(() => closeToast(toast.querySelector('.toast-close')), 5000);
+        }
+
+        function closeToast(button) {
+            const toast = button.closest('.toast');
+            toast.classList.add('hiding');
+            setTimeout(() => toast.remove(), 300);
+        }
+
+        function togglePassword(icon) {
+            const input = icon.parentElement.querySelector('input');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.replace('fa-eye', 'fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.replace('fa-eye-slash', 'fa-eye');
+            }
+        }
+    </script>
+</body>
+
+</html>

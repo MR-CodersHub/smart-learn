@@ -1,0 +1,481 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home2 | SmartLearn - Digital Learning Platform</title>
+    <meta name="description"
+        content="Experience the next generation of digital education. SmartLearn's online platform brings world-class learning tools and methodologies to your screen.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="alternate icon" href="assets/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .digital-hero {
+            padding: 180px 0 100px;
+            background: radial-gradient(circle at top right, var(--primary-light) 0%, #ffffff 60%),
+                linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .digital-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.6rem 1.2rem;
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 2rem;
+        }
+
+        .methodology-section {
+            padding: 100px 0;
+            background: var(--surface);
+        }
+
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .method-card {
+            text-align: center;
+            padding: 3rem;
+            background: var(--white);
+            border-radius: 30px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .method-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .method-num {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            margin: 0 auto 1.5rem;
+        }
+
+        .tools-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .tool-showcase {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            margin-top: 4rem;
+        }
+
+        .tool-list {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .tool-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 2rem;
+            border-radius: 20px;
+            background: var(--surface);
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .tool-item:hover {
+            border-color: var(--primary);
+            background: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .tool-icon {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .learner-profiles {
+            padding: 100px 0;
+            background: var(--secondary);
+            color: white;
+        }
+
+        .profiles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .profile-card {
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .profile-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+        }
+
+        .profile-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .advantage-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        @media (max-width: 992px) {
+
+            .digital-hero-grid,
+            .tool-showcase,
+            .methodology-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav id="main-nav">
+                <a href="index.html" class="logo">
+                    <img src="assets/logo.png" alt="SmartLearn Logo">
+                    Smart<span>Learn</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="home-digital.html" class="active">Home2</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="header-actions">
+                    <div class="user-menu-container">
+                        <button class="user-menu-btn" aria-label="User Account">
+                            <i class="fas fa-user"></i>
+                        </button>
+                        <div class="user-dropdown">
+                            <a href="login.html" class="dropdown-item"><i class="fas fa-sign-in-alt"></i> Log In</a>
+                            <a href="signup.html" class="dropdown-item"><i class="fas fa-user-plus"></i> Sign Up</a>
+                        </div>
+                    </div>
+                    <a href="signup.html" class="btn btn-primary hide-mobile">Join Now</a>
+                    <div class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Digital Hero Section -->
+        <section class="digital-hero">
+            <div class="container">
+                <div class="digital-hero-grid">
+                    <div class="hero-text" data-reveal>
+                        <div class="hero-badge">
+                            <i class="fas fa-bolt"></i>
+                            <span>Next-Gen Learning Platform</span>
+                        </div>
+                        <h1 style="font-size: 4rem; color: var(--secondary); font-weight: 800; line-height: 1.1;">
+                            Digital Education <br><span style="color: var(--primary);">Redefined.</span></h1>
+                        <p style="font-size: 1.25rem; color: var(--text-muted); margin: 2rem 0; max-width: 500px;">
+                            Access a world of knowledge with our cutting-edge online platform. Built for the modern
+                            learner who demands flexibility and excellence.</p>
+                        <div style="display: flex; gap: 1.5rem;">
+                            <a href="programs.html" class="btn btn-primary">Start Learning</a>
+                            <a href="#tools" class="btn btn-outline">Explore Tools</a>
+                        </div>
+                    </div>
+                    <div class="hero-image" data-reveal style="position: relative;">
+                        <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&q=80&w=800"
+                            alt="Online Learning" style="border-radius: 30px; box-shadow: var(--shadow-lg);">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology Section -->
+        <section class="methodology-section">
+            <div class="container">
+                <div style="text-align: center;">
+                    <h2 style="font-size: 3rem; color: var(--secondary); font-weight: 800;">Our Digital Methodology</h2>
+                    <p style="color: var(--text-muted); margin-top: 1rem;">A 3-step structured approach to online
+                        mastery.</p>
+                </div>
+                <div class="methodology-grid" data-reveal>
+                    <div class="method-card">
+                        <div class="method-num">1</div>
+                        <h3 style="margin-bottom: 1rem;">Induction</h3>
+                        <p style="color: var(--text-muted);">Interactive onboarding and personalized learning path
+                            generation based on your goals.</p>
+                    </div>
+                    <div class="method-card">
+                        <div class="method-num">2</div>
+                        <h3 style="margin-bottom: 1rem;">Guided Practice</h3>
+                        <p style="color: var(--text-muted);">Live lab sessions and AI-fueled feedback loops to sharpen
+                            your practical skills.</p>
+                    </div>
+                    <div class="method-card">
+                        <div class="method-num">3</div>
+                        <h3 style="margin-bottom: 1rem;">Active Projects</h3>
+                        <p style="color: var(--text-muted);">Build real-world applications and graduate with a
+                            professional-grade portfolio.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Section -->
+        <section id="tools" class="tools-section">
+            <div class="container">
+                <div class="tool-showcase">
+                    <div class="tool-list" data-reveal>
+                        <h2 style="font-size: 3rem; color: var(--secondary); font-weight: 800; margin-bottom: 1rem;">
+                            Powerful Online <span style="color: var(--primary);">Learning Tools</span></h2>
+                        <p style="color: var(--text-muted); margin-bottom: 3rem;">We've built a custom ecosystem
+                            designed to eliminate distal barriers in digital education.</p>
+
+                        <div class="tool-item">
+                            <i class="fas fa-desktop tool-icon"></i>
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Smart Dashboard</h4>
+                                <p style="color: var(--text-muted); font-size: 0.95rem;">Track your progress, manage
+                                    assignments, and access recordings in one unified view.</p>
+                            </div>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fas fa-comments tool-icon"></i>
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Live Collaboration</h4>
+                                <p style="color: var(--text-muted); font-size: 0.95rem;">Integrated real-time workspace
+                                    for group projects and peer-to-peer code reviews.</p>
+                            </div>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fas fa-cloud-download-alt tool-icon"></i>
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Offline Access</h4>
+                                <p style="color: var(--text-muted); font-size: 0.95rem;">Download resources and course
+                                    materials to continue studying without internet limitations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tool-visual" data-reveal style="position: relative;">
+                        <!-- Main Dashboard Frame -->
+                        <div class="dashboard-mockup"
+                            style="background: white; border-radius: 30px; padding: 1.5rem; box-shadow: var(--shadow-lg); border: 1px solid rgba(16, 185, 129, 0.2); position: relative; overflow: hidden;">
+                            <img src="assets/dashboard-preview.png" alt="SmartLearn Student Dashboard"
+                                style="width: 100%; border-radius: 20px;">
+
+                            <!-- Floating 'Live' Status Markers -->
+                            <div class="status-marker"
+                                style="position: absolute; top: 30px; right: 40px; background: white; padding: 0.8rem 1.2rem; border-radius: 12px; box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 0.8rem; border-left: 4px solid #10b981; animation: float 4s ease-in-out infinite;">
+                                <div
+                                    style="width: 10px; height: 10px; background: #10b981; border-radius: 50%; position: relative;">
+                                    <div
+                                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #10b981; border-radius: 50%; animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;">
+                                    </div>
+                                </div>
+                                <span style="font-size: 0.85rem; font-weight: 700; color: var(--secondary);">85%
+                                    Completed</span>
+                            </div>
+
+                            <div class="status-marker"
+                                style="position: absolute; bottom: 40px; left: 40px; background: var(--secondary); padding: 1rem 1.5rem; border-radius: 12px; box-shadow: var(--shadow-lg); color: white; display: flex; flex-direction: column; gap: 0.2rem; animation: float 5s ease-in-out infinite reverse;">
+                                <span
+                                    style="font-size: 0.7rem; opacity: 0.8; font-weight: 600; text-transform: uppercase;">Next
+                                    Milestone</span>
+                                <span style="font-size: 1rem; font-weight: 700;">Final Thesis Prep</span>
+                            </div>
+                        </div>
+
+                        <!-- CSS for dynamic elements -->
+                        <style>
+                            @keyframes ping {
+
+                                75%,
+                                100% {
+                                    transform: scale(2.5);
+                                    opacity: 0;
+                                }
+                            }
+
+                            .dashboard-mockup img {
+                                transition: transform 0.5s ease;
+                            }
+
+                            .dashboard-mockup:hover img {
+                                transform: scale(1.03);
+                            }
+                        </style>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Target Learners -->
+        <section class="learner-profiles">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 5rem;">
+                    <h2 style="font-size: 3rem; font-weight: 800;">Who Is This For?</h2>
+                    <p style="opacity: 0.8; margin-top: 1rem;">Our platform is optimized for various learner profiles.
+                    </p>
+                </div>
+                <div class="profiles-grid" data-reveal>
+                    <div class="profile-card">
+                        <i class="fas fa-user-graduate"></i>
+                        <h3 style="margin-bottom: 1rem;">Full-Time Students</h3>
+                        <p style="opacity: 0.7;">Gain deeper industry insights alongside your academic degree with
+                            specialized supplemental paths.</p>
+                    </div>
+                    <div class="profile-card">
+                        <i class="fas fa-user-clock"></i>
+                        <h3 style="margin-bottom: 1rem;">Working Professionals</h3>
+                        <p style="opacity: 0.7;">Upskill at your own pace. Our flexible scheduling fits around your
+                            9-to-5 commitments.</p>
+                    </div>
+                    <div class="profile-card">
+                        <i class="fas fa-user-plus"></i>
+                        <h3 style="margin-bottom: 1rem;">Career Switchers</h3>
+                        <p style="opacity: 0.7;">Intensive career-changing tracks designed to take you from zero to
+                            professional in record time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platform Advantages -->
+        <section class="advantages" style="padding: 120px 0;">
+            <div class="container">
+                <div class="advantage-header" data-reveal>
+                    <h2 style="font-size: 3rem; color: var(--secondary); font-weight: 800;">Platform Advantages</h2>
+                    <p style="color: var(--text-muted); margin-top: 1rem;">Why thousands of learners choose our digital
+                        ecosystem.</p>
+                </div>
+                <div class="services-grid" data-reveal>
+                    <div class="service-page-card">
+                        <div class="icon-box"><i class="fas fa-microchip"></i></div>
+                        <h3>Modern Tech Stacks</h3>
+                        <p>We teach the latest technologies currently being used by top-tier silicon valley startups.
+                        </p>
+                    </div>
+                    <div class="service-page-card">
+                        <div class="icon-box"><i class="fas fa-search"></i></div>
+                        <h3>Endless Content</h3>
+                        <p>Access our vast library of archived workshops, webinars, and masterclasses 24/7/365.</p>
+                    </div>
+                    <div class="service-page-card">
+                        <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
+                        <h3>Verified Credentials</h3>
+                        <p>Our certificates are anchored on the blockchain for permanent, tamper-proof verification.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="cta" style="padding: 100px 0; background: var(--primary); color: white; text-align: center;">
+            <div class="container" data-reveal>
+                <h2 style="font-size: 3.5rem; margin-bottom: 1.5rem; font-weight: 800;">Step into the Future.</h2>
+                <p style="font-size: 1.3rem; margin-bottom: 3rem; opacity: 0.9;">Join the global movement of
+                    digital-first learners today.</p>
+                <a href="signup.html" class="btn"
+                    style="background: var(--secondary); color: white; padding: 1.5rem 4rem; font-size: 1.2rem;">Enroll
+                    in the Digital Path</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="logo">
+                        <img src="assets/logo.png" alt="SmartLearn Logo"> Smart<span>Learn</span>
+                    </a>
+                    <p>Empowering minds through accessible, high-quality online education. Grow your skills, grow your future.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="home-digital.html">Home2</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@smartlearn.com">info@smartlearn.com</a></li>
+                        <li><a href="#">+1 (555) 123-4567</a></li>
+                        <li>
+                            <div class="socials" style="display: flex; gap: 1rem; margin-top: 1rem;">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SmartLearn Education. All rights reserved. Designed for clarity and growth.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

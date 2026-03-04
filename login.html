@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In | SmartLearn</title>
+    <meta name="description" content="Log in to your SmartLearn account to continue your learning journey.">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="alternate icon" href="assets/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <div class="auth-container">
+        <div class="auth-box">
+
+            <!-- Header -->
+            <div class="auth-header">
+                <a href="index.html" class="auth-logo">
+                    <img src="assets/logo.png" alt="SmartLearn Logo">
+                    Smart<span>Learn</span>
+                </a>
+                <h1 class="auth-title">Welcome Back</h1>
+                <p class="auth-subtitle">Please enter your details to sign in</p>
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form" onsubmit="handleLogin(event)" novalidate>
+                <div class="form-group">
+                    <label class="form-label" for="login-email">Email Address</label>
+                    <input type="email" id="login-email" class="form-input" placeholder="name@example.com"
+                        autocomplete="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="login-password">Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="login-password" class="form-input" placeholder="••••••••"
+                            autocomplete="current-password" required>
+                        <i class="far fa-eye password-toggle" onclick="togglePassword(this)"
+                            aria-label="Toggle password"></i>
+                    </div>
+                </div>
+
+                <!-- Forgot Password -->
+                <div class="forgot-row">
+                    <a href="reset-password.html" class="forgot-link">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="auth-btn" id="login-submit-btn">
+                    <i class="fas fa-sign-in-alt"></i> Log In
+                </button>
+            </form>
+
+            <!-- Sign Up link -->
+            <div class="auth-footer">
+                Don't have an account? <a href="signup.html" class="auth-link">Sign Up</a>
+            </div>
+
+            <!-- Role-Based Login -->
+            <div class="role-divider">
+                <span>Or continue as a specific role</span>
+            </div>
+            <div class="role-login-btns">
+                <a href="admin-login.html" id="admin-login-link" class="role-btn role-btn-admin">
+                    <i class="fas fa-shield-alt"></i> Admin Login
+                </a>
+                <a href="user-login.html" id="user-login-link" class="role-btn role-btn-user">
+                    <i class="fas fa-user-graduate"></i> User Login
+                </a>
+            </div>
+
+            <!-- Back to Home -->
+            <a href="index.html" class="auth-back">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+
+        </div>
+    </div>
+
+    <script>
+        function handleLogin(e) {
+            e.preventDefault();
+
+            const email = document.getElementById('login-email').value.trim();
+            const password = document.getElementById('login-password').value;
+            const btn = document.getElementById('login-submit-btn');
+
+            if (!email || !password) {
+                showToast('Missing Fields', 'Please fill in both fields.', 'error');
+                return;
+            }
+
+            // Disable button & show loading state
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing in…';
+
+            setTimeout(() => {
+                localStorage.setItem('user', 'Demo User');
+                showToast('Welcome Back!', 'Logging you in…', 'success');
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1200);
+            }, 1000);
+        }
+
+        function showToast(title, message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+
+            const iconClass = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
+
+            toast.innerHTML = `
+                <div class="toast-icon"><i class="fas ${iconClass}"></i></div>
+                <div class="toast-content"><h4>${title}</h4><p>${message}</p></div>
+                <button class="toast-close" onclick="closeToast(this)" aria-label="Dismiss">
+                    <i class="fas fa-times"></i>
+                </button>
+            `;
+
+            container.appendChild(toast);
+            setTimeout(() => closeToast(toast.querySelector('.toast-close')), 5000);
+        }
+
+        function closeToast(button) {
+            const toast = button.closest('.toast');
+            toast.classList.add('hiding');
+            setTimeout(() => toast.remove(), 300);
+        }
+
+        function togglePassword(icon) {
+            const input = icon.parentElement.querySelector('input');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.replace('fa-eye', 'fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.replace('fa-eye-slash', 'fa-eye');
+            }
+        }
+    </script>
+
+</body>
+
+</html>

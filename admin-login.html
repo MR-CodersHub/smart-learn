@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | SmartLearn</title>
+    <meta name="description" content="Admin login portal for SmartLearn platform management.">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="alternate icon" href="assets/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Admin Login accent overrides */
+        .auth-container {
+            background: radial-gradient(circle at top right, rgba(249, 115, 22, 0.12) 0%, #ffffff 70%);
+        }
+
+        .admin-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: #0f172a;
+            color: #f97316;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 0.28rem 0.8rem;
+            border-radius: 20px;
+            margin: 0;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .auth-btn.admin-submit {
+            background: #0f172a;
+        }
+
+        .auth-btn.admin-submit:hover {
+            background: #1e293b;
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.25);
+        }
+
+        .form-input:focus {
+            border-color: #f97316;
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+        }
+
+        .demo-btn {
+            width: 100%;
+            padding: 0.65rem 1rem;
+            background: rgba(249, 115, 22, 0.08);
+            border: 1.5px dashed #f97316;
+            border-radius: 12px;
+            color: #f97316;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-bottom: 1rem;
+        }
+
+        .demo-btn:hover {
+            background: rgba(249, 115, 22, 0.15);
+        }
+
+        .error-msg {
+            background: #fee2e2;
+            color: #dc2626;
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            font-size: 0.88rem;
+            margin-bottom: 1rem;
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .error-msg.visible {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="toast-container" id="toast-container"></div>
+
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="auth-header">
+                <div
+                    style="display: flex; align-items: center; justify-content: center; gap: 0.85rem; margin-bottom: 1.25rem; flex-wrap: wrap;">
+                    <a href="login.html" class="auth-logo" style="margin-bottom: 0;">
+                        <img src="assets/logo.png" alt="SmartLearn Logo">
+                        Smart<span>Learn</span>
+                    </a>
+                    <div class="admin-badge"><i class="fas fa-shield-alt"></i> Admin Portal</div>
+                </div>
+                <h1 class="auth-title">Admin Login</h1>
+                <p class="auth-subtitle">Authorised personnel only &mdash; enter your admin credentials</p>
+            </div>
+
+            <!-- Error Message -->
+            <div class="error-msg" id="error-msg">
+                <i class="fas fa-exclamation-circle"></i>
+                <span id="error-text">Invalid credentials.</span>
+            </div>
+
+            <!-- Admin Login Form -->
+            <form id="admin-login-form" onsubmit="handleAdminLogin(event)">
+                <div class="form-group">
+                    <label class="form-label">Admin Email</label>
+                    <input type="email" id="admin-email" class="form-input" placeholder="admin@smartlearn.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="admin-password" class="form-input" placeholder="••••••••" required>
+                        <i class="far fa-eye password-toggle" onclick="togglePassword(this)"></i>
+                    </div>
+                </div>
+                <!-- Forgot Password -->
+                <div class="forgot-row">
+                    <a href="reset-password.html" class="forgot-link" style="color:#f97316;">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="auth-btn admin-submit">
+                    <i class="fas fa-sign-in-alt" style="margin-right:0.5rem;"></i> Sign In as Admin
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                Not an admin? <a href="user-login.html" class="auth-link">User Login</a>
+            </div>
+            <a href="login.html" class="auth-back">
+                <i class="fas fa-arrow-left"></i> Back to Login
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function handleAdminLogin(e) {
+            e.preventDefault();
+
+            const email = document.getElementById('admin-email').value.trim();
+            const password = document.getElementById('admin-password').value.trim();
+            const errorBox = document.getElementById('error-msg');
+            const errorText = document.getElementById('error-text');
+
+            // Hide previous error
+            errorBox.classList.remove('visible');
+
+            // Only check that fields are not empty
+            if (!email || !password) {
+                errorText.textContent = 'Please enter email and password.';
+                errorBox.classList.add('visible');
+                return;
+            }
+
+            // Validate specific admin credentials
+            if (email !== 'admin@gmail.com' || password !== 'admin123') {
+                errorText.textContent = 'Invalid Admin Credentials';
+                errorBox.classList.add('visible');
+                return;
+            }
+
+            // Success — redirect immediately to admin dashboard
+            localStorage.setItem('smartlearn_role', 'admin');
+            localStorage.setItem('smartlearn_user', email);
+            window.location.href = 'admin-dashboard.html';
+        }
+
+        function showToast(title, message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            let iconClass = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
+            toast.innerHTML = `
+                <div class="toast-icon"><i class="fas ${iconClass}"></i></div>
+                <div class="toast-content"><h4>${title}</h4><p>${message}</p></div>
+                <button class="toast-close" onclick="closeToast(this)"><i class="fas fa-times"></i></button>
+            `;
+            container.appendChild(toast);
+            setTimeout(() => closeToast(toast.querySelector('.toast-close')), 5000);
+        }
+
+        function closeToast(button) {
+            const toast = button.closest('.toast');
+            toast.classList.add('hiding');
+            setTimeout(() => toast.remove(), 300);
+        }
+
+        function togglePassword(icon) {
+            const input = icon.parentElement.querySelector('input');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.replace('fa-eye', 'fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.replace('fa-eye-slash', 'fa-eye');
+            }
+        }
+    </script>
+</body>
+
+</html>

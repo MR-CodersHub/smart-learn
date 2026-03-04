@@ -1,0 +1,538 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About SmartLearn | Empowering the Future of Education</title>
+    <meta name="description"
+        content="Discover SmartLearn's mission to democratize education. Learn about our expert instructors, flexible learning, and global community.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="alternate icon" href="assets/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Specific Page Styles */
+        .page-hero {
+            padding: 160px 0 80px;
+            background: radial-gradient(circle at top center, var(--primary-light) 0%, #ffffff 70%);
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 3.5rem;
+            color: var(--secondary);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .page-hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .who-we-are {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .split-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .split-image {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+
+        .split-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .split-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .difference-section {
+            padding: 100px 0;
+            background: var(--surface);
+        }
+
+        .mission-vision-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .mv-card {
+            background: var(--surface);
+            padding: 3.5rem;
+            border-radius: 24px;
+            height: 100%;
+            border-left: 5px solid var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .values-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--secondary) 0%, #064e3b 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .value-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem 1.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .value-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .learning-exp-section {
+            padding: 100px 0;
+            background: var(--surface);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .stat-box {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .cta-section {
+            padding: 120px 0;
+            background: url('assets/hero.png') no-repeat center center/cover;
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(6, 78, 59, 0.9);
+            z-index: 1;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 992px) {
+            .split-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .mv-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav id="main-nav">
+                <a href="index.html" class="logo">
+                    <img src="assets/logo.png" alt="SmartLearn Logo">
+                    Smart<span>Learn</span>
+                </a>
+                                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="home-digital.html">Home2</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="header-actions">
+                    <div class="user-menu-container">
+                        <button class="user-menu-btn" aria-label="User Account">
+                            <i class="fas fa-user"></i>
+                        </button>
+                        <div class="user-dropdown">
+                            <a href="login.html" class="dropdown-item"><i class="fas fa-sign-in-alt"></i> Log In</a>
+                            <a href="signup.html" class="dropdown-item"><i class="fas fa-user-plus"></i> Sign Up</a>
+                        </div>
+                    </div>
+                    <a href="signup.html" class="btn btn-primary hide-mobile">Join Now</a>
+                    <div class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="page-hero">
+            <div class="container" data-reveal>
+                <h6
+                    style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">
+                    Our Story</h6>
+                <h1>About SmartLearn</h1>
+                <p>We are on a mission to democratize education specifically for the digital age, connecting ambitious
+                    learners with world-class knowledge, anywhere, anytime.</p>
+            </div>
+        </section>
+
+        <!-- Who We Are Section -->
+        <section class="who-we-are">
+            <div class="container" data-reveal>
+                <div class="split-grid">
+                    <div class="split-content">
+                        <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">Who We Are</h2>
+                        <p
+                            style="font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 1.5rem;">
+                            SmartLearn is more than just an EdTech platform; we are a global movement dedicated to
+                            transforming how people learn, grow, and succeed. Founded in 2024 by a team of educators and
+                            engineers, we recognized a gap between traditional academic theory and the practical skills
+                            demanded by today's tech-driven workforce.
+                        </p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-muted);">
+                            Our approach combines rigorous academic structure with flexible, self-paced digital
+                            delivery. By partnering with industry veterans and top-tier institutions, we ensure our
+                            content is not just current, but visionary. We exist to empower individuals to break
+                            barriers and craft their own future through the power of education.
+                        </p>
+                    </div>
+                    <div class="split-image">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800"
+                            alt="SmartLearn Team Collaboration">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Makes Us Different -->
+        <section class="difference-section">
+            <div class="container" data-reveal>
+                <h2 class="section-title">What Makes Us Different</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-chalkboard-teacher feature-icon"></i>
+                        <h3>Expert Instructors</h3>
+                        <p>Learn directly from Senior Engineers, Product Managers, and Designers who work at top global
+                            tech companies.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-project-diagram feature-icon"></i>
+                        <h3>Project-Based Learning</h3>
+                        <p>Don't just watch videos. Build real-world applications and portfolios that prove your skills
+                            to employers.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-briefcase feature-icon"></i>
+                        <h3>Career Support</h3>
+                        <p>Get personalized resume reviews, mock interviews, and direct referrals to our network of
+                            hiring partners.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-stopwatch feature-icon"></i>
+                        <h3>Flexible Access</h3>
+                        <p>Life happens. That's why we offer lifetime access to all course materials so you can learn at
+                            your own pace.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision -->
+        <section class="mission-vision-section">
+            <div class="container" data-reveal>
+                <div class="mv-grid">
+                    <div class="mv-card">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                            <div
+                                style="width: 50px; height: 50px; background: var(--primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.5rem;">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h3 style="font-size: 2rem; color: var(--secondary); margin: 0;">Our Mission</h3>
+                        </div>
+                        <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.7;">
+                            To create a world where quality education is a fundamental right, not a privilege. We strive
+                            to provide accessible, affordable, and high-impact learning resources that bridge the gap
+                            between potential and opportunity for learners everywhere.
+                        </p>
+                    </div>
+                    <div class="mv-card">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                            <div
+                                style="width: 50px; height: 50px; background: var(--primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.5rem;">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h3 style="font-size: 2rem; color: var(--secondary); margin: 0;">Our Vision</h3>
+                        </div>
+                        <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.7;">
+                            To become the world's most trusted ecosystem for lifelong learning, fostering a global
+                            community of innovators, leaders, and creators who are equipped to solve the challenges of
+                            tomorrow.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Values -->
+        <section class="values-section">
+            <div class="container" data-reveal>
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: white;">Our Core Values</h2>
+                <p style="opacity: 0.8; max-width: 600px; margin: 0 auto;">The principles that guide every course we
+                    build and every student we mentor.</p>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <i class="fas fa-star value-icon"></i>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">Quality First</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.8;">We never compromise on the depth or accuracy of our
+                            content.</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-universal-access value-icon"></i>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">Accessibility</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.8;">Education should be inclusive and available to all
+                            backgrounds.</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-lightbulb value-icon"></i>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">Innovation</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.8;">We constantly evolve our platform with the latest
+                            technology.</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-users value-icon"></i>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">Community</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.8;">We grow faster when we learn and collaborate
+                            together.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Experience -->
+        <section class="learning-exp-section">
+            <div class="container" data-reveal>
+                <div class="split-grid">
+                    <div class="split-image">
+                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800"
+                            alt="Learning Experience">
+                    </div>
+                    <div class="split-content">
+                        <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">The Learning Experience
+                        </h2>
+                        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 2rem;">
+                            At SmartLearn, we believe education is a journey, not just a destination. Our courses are
+                            structured into bite-sized, digestible modules ensuring you master one concept before moving
+                            to the next.
+                        </p>
+                        <ul style="display: grid; gap: 1rem; margin-bottom: 2rem;">
+                            <li style="display: flex; gap: 1rem; align-items: flex-start;">
+                                <i class="fas fa-check-circle" style="color: var(--primary); margin-top: 5px;"></i>
+                                <span style="color: var(--text-muted);"><strong>Structured Modules:</strong> Clear
+                                    learning paths from beginner to advanced.</span>
+                            </li>
+                            <li style="display: flex; gap: 1rem; align-items: flex-start;">
+                                <i class="fas fa-check-circle" style="color: var(--primary); margin-top: 5px;"></i>
+                                <span style="color: var(--text-muted);"><strong>Hands-on Projects:</strong> Apply what
+                                    you learn immediately.</span>
+                            </li>
+                            <li style="display: flex; gap: 1rem; align-items: flex-start;">
+                                <i class="fas fa-check-circle" style="color: var(--primary); margin-top: 5px;"></i>
+                                <span style="color: var(--text-muted);"><strong>1-on-1 Mentorship:</strong> Direct
+                                    feedback from industry pros.</span>
+                            </li>
+                            <li style="display: flex; gap: 1rem; align-items: flex-start;">
+                                <i class="fas fa-check-circle" style="color: var(--primary); margin-top: 5px;"></i>
+                                <span style="color: var(--text-muted);"><strong>Verified Certificates:</strong>
+                                    Credentials that boost your LinkedIn profile.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Stats Row -->
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <span class="stat-number">25,000+</span>
+                        <span class="stat-label">Active Learners</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">120+</span>
+                        <span class="stat-label">Premium Courses</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Expert Mentors</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">95+</span>
+                        <span class="stat-label">Countries Served</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="cta-overlay"></div>
+            <div class="container cta-content" data-reveal>
+                <h2 style="font-size: 3rem; margin-bottom: 1.5rem; font-weight: 800;">Start Learning Today</h2>
+                <p
+                    style="font-size: 1.3rem; margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto; opacity: 0.9;">
+                    Join the community that is redefining digital education. Your future starts with the next lesson.
+                </p>
+                <a href="courses.html" class="btn btn-primary"
+                    style="background: white; color: var(--secondary); border: none; padding: 1rem 3rem; font-size: 1.1rem; font-weight: 700;">
+                    Explore Courses
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="logo">
+                        <img src="assets/logo.png" alt="SmartLearn Logo"> Smart<span>Learn</span>
+                    </a>
+                    <p>Empowering minds through accessible, high-quality online education. Grow your skills, grow your future.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="home-digital.html">Home2</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@smartlearn.com">info@smartlearn.com</a></li>
+                        <li><a href="#">+1 (555) 123-4567</a></li>
+                        <li>
+                            <div class="socials" style="display: flex; gap: 1rem; margin-top: 1rem;">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SmartLearn Education. All rights reserved. Designed for clarity and growth.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

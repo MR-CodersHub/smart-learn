@@ -1,0 +1,430 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartLearn | Elevate Your Learning Journey</title>
+    <meta name="description"
+        content="Unlock your potential with SmartLearn. Access world-class courses, expert instructors, and a community of learners. Start your growth today.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="alternate icon" href="assets/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav id="main-nav">
+                <a href="index.html" class="logo">
+                    <img src="assets/logo.png" alt="SmartLearn Logo">
+                    Smart<span>Learn</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="home-digital.html">Home2</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="header-actions">
+                    <div class="user-menu-container">
+                        <button class="user-menu-btn" aria-label="User Account">
+                            <i class="fas fa-user"></i>
+                        </button>
+                        <div class="user-dropdown">
+                            <a href="login.html" class="dropdown-item"><i class="fas fa-sign-in-alt"></i> Log In</a>
+                            <a href="signup.html" class="dropdown-item"><i class="fas fa-user-plus"></i> Sign Up</a>
+                        </div>
+                    </div>
+                    <a href="signup.html" class="btn btn-primary hide-mobile">Join Now</a>
+                    <div class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Unlock Your Potential, <br><span>Shape Your Future</span></h1>
+                        <p>Access world-class education from anywhere in the world. SmartLearn provides the tools,
+                            mentors, and community you need to master new skills and advance your career.</p>
+                        <div class="hero-btns">
+                            <a href="#courses" class="btn btn-primary">Explore Courses</a>
+                            <a href="#about" class="btn btn-outline" style="margin-left: 1rem;">Why SmartLearn?</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="assets/hero.png" alt="Students learning together">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats" style="padding: 50px 0; background: var(--surface);">
+            <div class="container">
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); text-align: center; gap: 2rem;">
+                    <div>
+                        <h2 style="color: var(--primary); font-size: 2.5rem;">15k+</h2>
+                        <p style="color: var(--text-muted);">Active Students</p>
+                    </div>
+                    <div>
+                        <h2 style="color: var(--primary); font-size: 2.5rem;">200+</h2>
+                        <p style="color: var(--text-muted);">Expert Tutors</p>
+                    </div>
+                    <div>
+                        <h2 style="color: var(--primary); font-size: 2.5rem;">500+</h2>
+                        <p style="color: var(--text-muted);">Course Units</p>
+                    </div>
+                    <div>
+                        <h2 style="color: var(--primary); font-size: 2.5rem;">95%</h2>
+                        <p style="color: var(--text-muted);">Success Rate</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container" data-reveal>
+                <h2 class="section-title">Why Choose SmartLearn?</h2>
+                <div class="features-grid">
+                    <a href="expert-instructors.html" class="feature-card"
+                        style="text-decoration: none; color: inherit;">
+                        <i class="fas fa-chalkboard-teacher feature-icon"></i>
+                        <h3>Expert Instructors</h3>
+                        <p>Learn from industry leaders and academic experts with years of real-world experience.</p>
+                    </a>
+                    <a href="flexible-learning.html" class="feature-card"
+                        style="text-decoration: none; color: inherit;">
+                        <i class="fas fa-clock feature-icon"></i>
+                        <h3>Flexible Learning</h3>
+                        <p>Study at your own pace with lifetime access to all course materials and resources.</p>
+                    </a>
+                    <a href="certifications.html" class="feature-card" style="text-decoration: none; color: inherit;">
+                        <i class="fas fa-award feature-icon"></i>
+                        <h3>Certifications</h3>
+                        <p>Earn industry-recognized certificates to showcase your achievements to employers.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section id="courses" class="courses" style="padding: 120px 0;">
+            <div class="container" data-reveal>
+                <div style="text-align: center; margin-bottom: 5rem;">
+                    <h2 class="section-title">Explore Popular Courses</h2>
+                    <p style="color: var(--text-muted); max-width: 600px; margin: 1rem auto 0;">Start your learning
+                        journey with our most-requested programs, designed by industry experts.</p>
+                </div>
+
+                <div class="courses-grid">
+                    <!-- Course 1 -->
+                    <a href="courses.html" class="course-card">
+                        <div class="course-img">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=600"
+                                alt="Web Development">
+                            <span class="course-tag">Web Design</span>
+                        </div>
+                        <div class="course-info">
+                            <h3>Modern Web Architecture</h3>
+                            <p>Master HTML5, CSS3, and JavaScript from scratch with real-world projects and modern
+                                tooling.</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-user"></i> 1,240 Students</span>
+                                <span><i class="fas fa-star"></i> 4.9 (120)</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Course 2 -->
+                    <a href="courses.html" class="course-card">
+                        <div class="course-img">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600"
+                                alt="Data Science">
+                            <span class="course-tag">Data Science</span>
+                        </div>
+                        <div class="course-info">
+                            <h3>Data Analytics Pro</h3>
+                            <p>Become a data scientist by learning Python, SQL, and advanced visualization techniques
+                                using real datasets.</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-user"></i> 856 Students</span>
+                                <span><i class="fas fa-star"></i> 4.8 (85)</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Course 3 -->
+                    <a href="courses.html" class="course-card">
+                        <div class="course-img">
+                            <img src="assets/design-course.png" alt="UI/UX Design">
+                            <span class="course-tag">UI/UX Design</span>
+                        </div>
+                        <div class="course-info">
+                            <h3>Design Thinking & UX</h3>
+                            <p>Learn the principles of user experience and create stunning, intuitive interfaces using
+                                modern design systems.</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-user"></i> 2,105 Students</span>
+                                <span><i class="fas fa-star"></i> 5.0 (210)</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Explore More CTA -->
+                <div class="explore-cta" data-reveal>
+                    <h3 style="font-size: 2rem; color: var(--secondary); margin-bottom: 1rem;">Ready to see more?</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 2.5rem; font-size: 1.1rem;">Discover over 50+
+                        professional courses tailored to your career goals.</p>
+                    <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="courses.html" class="btn btn-primary" style="padding: 1.2rem 2.5rem;">View All
+                            Courses</a>
+                        <a href="courses.html#categories" class="btn btn-outline" style="padding: 1.2rem 2.5rem;">Browse
+                            Categories</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industry Skills Section -->
+        <section class="industry-skills" style="padding: 120px 0; background: var(--white);">
+            <div class="container" data-reveal>
+                <div style="text-align: center; margin-bottom: 5rem;">
+                    <h2 class="section-title">Build Your Future with Industry-Ready Skills</h2>
+                    <p
+                        style="color: var(--text-muted); max-width: 700px; margin: 1.5rem auto 0; font-size: 1.1rem; line-height: 1.8;">
+                        Our curriculum is meticulously crafted by leading industry veterans to ensure you graduate with
+                        the practical skills employers are actively looking for. Join a platform that prioritizes your
+                        career growth.
+                    </p>
+                </div>
+
+                <div class="features-grid grid-quad">
+                    <!-- Feature 1 -->
+                    <div class="feature-card">
+                        <div
+                            style="width: 70px; height: 70px; background: var(--primary-light); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: var(--primary); font-size: 1.8rem;">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3
+                            style="margin-bottom: 1.25rem; color: var(--secondary); font-weight: 800; font-size: 1.5rem;">
+                            Expert Mentors</h3>
+                        <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.7; max-width: 320px;">Learn
+                            directly from industry veterans at world-class technology and business organizations.</p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="feature-card">
+                        <div
+                            style="width: 70px; height: 70px; background: var(--primary-light); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: var(--primary); font-size: 1.8rem;">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3
+                            style="margin-bottom: 1.25rem; color: var(--secondary); font-weight: 800; font-size: 1.5rem;">
+                            Practical Projects</h3>
+                        <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.7; max-width: 320px;">Build
+                            a high-impact portfolio by solving complex, real-world engineering and design challenges.
+                        </p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="feature-card">
+                        <div
+                            style="width: 70px; height: 70px; background: var(--primary-light); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: var(--primary); font-size: 1.8rem;">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3
+                            style="margin-bottom: 1.25rem; color: var(--secondary); font-weight: 800; font-size: 1.5rem;">
+                            Career Support</h3>
+                        <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.7; max-width: 320px;">
+                            Receive strategic guidance and interview preparation to accelerate your professional growth.
+                        </p>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="feature-card">
+                        <div
+                            style="width: 70px; height: 70px; background: var(--primary-light); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: var(--primary); font-size: 1.8rem;">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h3
+                            style="margin-bottom: 1.25rem; color: var(--secondary); font-weight: 800; font-size: 1.5rem;">
+                            Global Community</h3>
+                        <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.7; max-width: 320px;">Engage
+                            with an elite network of ambitious professionals spanning across 120+ countries.</p>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 4rem;">
+                    <a href="courses.html" class="btn btn-primary"
+                        style="padding: 1.2rem 3rem; font-size: 1.1rem; font-weight: 700;">Start Learning Today</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about" style="padding: 100px 0; background: var(--surface);">
+            <div class="container" data-reveal>
+                <div class="hero-content">
+                    <div
+                        style="background: var(--white); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow-md);">
+                        <h2 style="margin-bottom: 1.5rem; color: var(--secondary);">Our Mission</h2>
+                        <p style="margin-bottom: 1rem;">SmartLearn was founded on the principle that high-quality
+                            education should be accessible to everyone, everywhere. We focus on clarity, growth, and
+                            real-world application.</p>
+                        <p>Our platform is built to be lightweight and fast, ensuring you can focus on what matters
+                            most: <strong>your learning journey.</strong></p>
+                    </div>
+                    <div class="hero-text">
+                        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Experience the <span
+                                style="color: var(--primary);">SmartLearn</span> Edge</h2>
+                        <ul style="margin-top: 1.5rem;">
+                            <li style="margin-bottom: 1rem;"><i class="fas fa-check-circle"
+                                    style="color: var(--primary); margin-right: 0.5rem;"></i> Zero Server Latency (Fully
+                                Static)</li>
+                            <li style="margin-bottom: 1rem;"><i class="fas fa-check-circle"
+                                    style="color: var(--primary); margin-right: 0.5rem;"></i> Industry-Leading
+                                Curriculum</li>
+                            <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 0.5rem;"></i>
+                                24/7 Community Support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials" style="padding: 100px 0; background: var(--white);">
+            <div class="container" data-reveal>
+                <div style="text-align: center; margin-bottom: 4rem;">
+                    <h2 class="section-title">What Our Students Say</h2>
+                </div>
+                <div class="testimonials-grid">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"SmartLearn changed my career. The Web Architecture course was
+                            exactly what I needed to land my first dev job!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"></div>
+                            <div class="author-info">
+                                <h4>Sarah Jenkins</h4>
+                                <p>Front-end Developer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"The mentors are incredible. They don't just teach code; they teach
+                            you how to think like an engineer."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"></div>
+                            <div class="author-info">
+                                <h4>David Chen</h4>
+                                <p>Data Analyst</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta"
+            style="padding: 100px 0; background: linear-gradient(rgba(16, 185, 129, 0.9), rgba(6, 78, 59, 0.95)), url('assets/hero.png'); background-size: cover; background-position: center; color: white; text-align: center;">
+            <div class="container" data-reveal>
+                <h2 style="font-size: 3rem; margin-bottom: 1.5rem;">Ready to Start Your Journey?</h2>
+                <p
+                    style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Join over 15,000 students already transforming their futures with SmartLearn. Start your first
+                    course today.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <a href="#" class="btn"
+                        style="background: white; color: var(--primary); padding: 1rem 2.5rem;">Enroll Now</a>
+                    <a href="#courses" class="btn"
+                        style="border: 2px solid white; color: white; padding: 1rem 2.5rem;">Browse Programs</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="logo">
+                        <img src="assets/logo.png" alt="SmartLearn Logo"> Smart<span>Learn</span>
+                    </a>
+                    <p>Empowering minds through accessible, high-quality online education. Grow your skills, grow your
+                        future.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="home-digital.html">Home2</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@smartlearn.com">info@smartlearn.com</a></li>
+                        <li><a href="#">+1 (555) 123-4567</a></li>
+                        <li>
+                            <div class="socials" style="display: flex; gap: 1rem; margin-top: 1rem;">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SmartLearn Education. All rights reserved. Designed for clarity and growth.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,426 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses | SmartLearn - Professional Curriculum</title>
+    <meta name="description"
+        content="Explore our extensive library of professional courses. Master new skills in Engineering, Design, AI, and Business with SmartLearn.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="alternate icon" href="assets/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav id="main-nav">
+                <a href="index.html" class="logo">
+                    <img src="assets/logo.png" alt="SmartLearn Logo">
+                    Smart<span>Learn</span>
+                </a>
+                                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="home-digital.html">Home2</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="courses.html" class="active">Courses</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="header-actions">
+                    <div class="user-menu-container">
+                        <button class="user-menu-btn" aria-label="User Account">
+                            <i class="fas fa-user"></i>
+                        </button>
+                        <div class="user-dropdown">
+                            <a href="login.html" class="dropdown-item"><i class="fas fa-sign-in-alt"></i> Log In</a>
+                            <a href="signup.html" class="dropdown-item"><i class="fas fa-user-plus"></i> Sign Up</a>
+                        </div>
+                    </div>
+                    <a href="signup.html" class="btn btn-primary hide-mobile">Join Now</a>
+                    <div class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Courses Header -->
+        <section class="courses-header">
+            <div class="container" data-reveal>
+                <h1 style="font-size: 3.5rem; font-weight: 800; margin-bottom: 1.5rem;">Our <span
+                        style="color: var(--primary);">Curriculum</span></h1>
+                <p style="font-size: 1.25rem; opacity: 0.9; max-width: 700px; margin: 0 auto;">
+                    Broaden your horizons with our expert-led courses designed to take you from foundational knowledge
+                    to
+                    industry mastery.
+                </p>
+            </div>
+        </section>
+
+        <!-- Search & Filter Section -->
+        <section class="search-filter-container">
+            <div class="container">
+                <div class="filter-box" data-reveal>
+                    <div class="search-input-group">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search for courses, skills, or mentors...">
+                    </div>
+                    <select class="filter-select">
+                        <option value="all">All Categories</option>
+                        <option value="engineering">Engineering</option>
+                        <option value="design">Design</option>
+                        <option value="ai">AI & Data Science</option>
+                        <option value="business">Business</option>
+                        <option value="marketing">Marketing</option>
+                    </select>
+                    <select class="filter-select">
+                        <option value="newest">Newest First</option>
+                        <option value="popular">Most Popular</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Grid -->
+        <section style="padding: 0 0 100px;">
+            <div class="container" data-reveal>
+                <div class="courses-grid" id="courses-grid">
+                    <!-- Course 1 -->
+                    <a href="course-fullstack.html" class="course-card">
+                        <div class="course-img">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=600"
+                                alt="Web Dev">
+                            <span class="course-tag">Engineering</span>
+                        </div>
+                        <div class="course-info">
+                            <h3>Advanced Full-Stack Engineering</h3>
+                            <p>Build scalable applications using React, Node.js, and Cloud-native architectures.</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-user-friends"></i> 1,5k Students</span>
+                                <span><i class="fas fa-star"></i> 4.9 (124)</span>
+                                <span style="margin-left: auto; color: var(--primary);">$499</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Course 2 -->
+                    <a href="course-design-systems.html" class="course-card">
+                        <div class="course-img">
+                            <img src="assets/design-course.png" alt="UX Design">
+                            <span class="course-tag">Design</span>
+                        </div>
+                        <div class="course-info">
+                            <h3>Mastering Design Systems</h3>
+                            <p>Learn to create consistent, scalable UI components and design tokens for enterprises.</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-user-friends"></i> 920 Students</span>
+                                <span><i class="fas fa-star"></i> 4.8 (88)</span>
+                                <span style="margin-left: auto; color: var(--primary);">$299</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Course 3 -->
+                    <a href="course-ml-foundations.html" class="course-card">
+                        <div class="course-img">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600"
+                                alt="AI">
+                            <span class="course-tag">AI & Data</span>
+                        </div>
+                        <div class="course-info">
+                            <h3>Machine Learning Foundations</h3>
+                            <p>Comprehensive guide to statistical learning, neural networks, and Python ML libraries.
+                            </p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-user-friends"></i> 2.4k Students</span>
+                                <span><i class="fas fa-star"></i> 5.0 (215)</span>
+                                <span style="margin-left: auto; color: var(--primary);">$399</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Course 4 -->
+                    <a href="course-marketing.html" class="course-card">
+                        <div class="course-img">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600"
+                                alt="Marketing">
+                            <span class="course-tag">Marketing</span>
+                        </div>
+                        <div class="course-info">
+                            <h3>Growth Marketing Mastery</h3>
+                            <p>Advanced strategies for SEO, performance ads, and lifecycle marketing funnels.</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-user-friends"></i> 3.1k Students</span>
+                                <span><i class="fas fa-star"></i> 4.7 (150)</span>
+                                <span style="margin-left: auto; color: var(--primary);">$199</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Course 5 -->
+                    <a href="course-cybersecurity.html" class="course-card">
+                        <div class="course-img">
+                            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=600"
+                                alt="Security">
+                            <span class="course-tag">Engineering</span>
+                        </div>
+                        <div class="course-info">
+                            <h3>Cyber Security Essentials</h3>
+                            <p>Understand the landscape of modern digital threats and how to protect infrastructure.</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-user-friends"></i> 850 Students</span>
+                                <span><i class="fas fa-star"></i> 4.9 (67)</span>
+                                <span style="margin-left: auto; color: var(--primary);">$349</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Course 6 -->
+                    <a href="course-product-management.html" class="course-card">
+                        <div class="course-img">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600"
+                                alt="Business">
+                            <span class="course-tag">Business</span>
+                        </div>
+                        <div class="course-info">
+                            <h3>Agile Product Management</h3>
+                            <p>Learn to lead product teams using Scrum, Kanban, and modern product discovery.</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-user-friends"></i> 1.3k Students</span>
+                                <span><i class="fas fa-star"></i> 4.8 (92)</span>
+                                <span style="margin-left: auto; color: var(--primary);">$149</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Course 7 -->
+                    <a href="course-javascript.html" class="course-card">
+                        <div class="course-img">
+                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=600"
+                                alt="JavaScript">
+                            <span class="course-tag">Engineering</span>
+                        </div>
+                        <div class="course-info">
+                            <h3>Modern JavaScript Deep Dive</h3>
+                            <p>Master ES6+, Asynchronous patterns, and functional programming in JavaScript.</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-user-friends"></i> 4.2k Students</span>
+                                <span><i class="fas fa-star"></i> 5.0 (420)</span>
+                                <span style="margin-left: auto; color: var(--primary);">$99</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Course 8 -->
+                    <a href="course-typography.html" class="course-card">
+                        <div class="course-img">
+                            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=600"
+                                alt="Web Design">
+                            <span class="course-tag">Design</span>
+                        </div>
+                        <div class="course-info">
+                            <h3>Advanced Web Typography</h3>
+                            <p>Master the art of selection and arrangement of type for the modern multi-device web.</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-user-friends"></i> 450 Students</span>
+                                <span><i class="fas fa-star"></i> 4.9 (35)</span>
+                                <span style="margin-left: auto; color: var(--primary);">$79</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Course 9 -->
+                    <a href="course-iot.html" class="course-card">
+                        <div class="course-img">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=600"
+                                alt="Electronics">
+                            <span class="course-tag">Engineering</span>
+                        </div>
+                        <div class="course-info">
+                            <h3>IoT Systems Architecture</h3>
+                            <p>Design and deploy secure Internet of Things networks using modern sensor tech.</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-user-friends"></i> 680 Students</span>
+                                <span><i class="fas fa-star"></i> 4.6 (42)</span>
+                                <span style="margin-left: auto; color: var(--primary);">$449</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Course 10 -->
+                    <a href="course-analytics.html" class="course-card">
+                        <div class="course-img">
+                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=600"
+                                alt="Business Analytics">
+                            <span class="course-tag">Business</span>
+                        </div>
+                        <div class="course-info">
+                            <h3>Strategic Business Analytics</h3>
+                            <p>Master data-driven decision making and strategic planning for modern enterprises.</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-user-friends"></i> 1,1k Students</span>
+                                <span><i class="fas fa-star"></i> 4.8 (110)</span>
+                                <span style="margin-left: auto; color: var(--primary);">$299</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Course 11 -->
+                    <a href="course-social-media.html" class="course-card">
+                        <div class="course-img">
+                            <img src="https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&q=80&w=600"
+                                alt="Social Media">
+                            <span class="course-tag">Marketing</span>
+                        </div>
+                        <div class="course-info">
+                            <h3>Social Media Advertising Pro</h3>
+                            <p>Master paid social across all major platforms to drive high-ROI conversions.</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-user-friends"></i> 3.4k Students</span>
+                                <span><i class="fas fa-star"></i> 4.9 (245)</span>
+                                <span style="margin-left: auto; color: var(--primary);">$149</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Course 12 -->
+                    <a href="course-productivity.html" class="course-card">
+                        <div class="course-img">
+                            <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?auto=format&fit=crop&q=80&w=600"
+                                alt="Productivity">
+                            <span class="course-tag">Business</span>
+                        </div>
+                        <div class="course-info">
+                            <h3>Ultimate Personal Productivity</h3>
+                            <p>Systems and mindsets for elite performance and focus in the digital age.</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-user-friends"></i> 5.6k Students</span>
+                                <span><i class="fas fa-star"></i> 5.0 (890)</span>
+                                <span style="margin-left: auto; color: var(--primary);">$49</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Pagination (Optional but nice for premium feel) -->
+                <div style="margin-top: 5rem; display: flex; justify-content: center; gap: 1rem;">
+                    <button class="btn btn-primary"
+                        style="width: 45px; height: 45px; padding: 0; display: flex; align-items: center; justify-content: center;">1</button>
+                    <button class="btn btn-outline"
+                        style="width: 45px; height: 45px; padding: 0; display: flex; align-items: center; justify-content: center;">2</button>
+                    <button class="btn btn-outline"
+                        style="width: 45px; height: 45px; padding: 0; display: flex; align-items: center; justify-content: center;">3</button>
+                    <button class="btn btn-outline" style="padding: 0 1.5rem;">Next <i class="fas fa-arrow-right"
+                            style="margin-left: 0.5rem;"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Become an Instructor CTA -->
+        <section style="padding: 100px 0; background: var(--surface);">
+            <div class="container">
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; align-items: center;">
+                    <div data-reveal>
+                        <h2
+                            style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 1.5rem; font-weight: 800;">
+                            Teach the World Online</h2>
+                        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                            Join a global community of experts and share your knowledge with millions of students
+                            worldwide.
+                            We provide the tools and platform; you provide the brilliance.
+                        </p>
+                        <a href="#" class="btn btn-primary" style="padding: 1.2rem 3rem;">Become an Instructor</a>
+                    </div>
+                    <div data-reveal>
+                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800"
+                            alt="Teaching" style="border-radius: 30px; box-shadow: var(--shadow-lg);">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="logo">
+                        <img src="assets/logo.png" alt="SmartLearn Logo"> Smart<span>Learn</span>
+                    </a>
+                    <p>Empowering minds through accessible, high-quality online education. Grow your skills, grow your future.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="home-digital.html">Home2</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@smartlearn.com">info@smartlearn.com</a></li>
+                        <li><a href="#">+1 (555) 123-4567</a></li>
+                        <li>
+                            <div class="socials" style="display: flex; gap: 1rem; margin-top: 1rem;">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SmartLearn Education. All rights reserved. Designed for clarity and growth.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Simple client-side search simulation
+        const searchInput = document.querySelector('.search-input-group input');
+        const courseCards = document.querySelectorAll('.course-card');
+
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            courseCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const desc = card.querySelector('p').textContent.toLowerCase();
+                if (title.includes(term) || desc.includes(term)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

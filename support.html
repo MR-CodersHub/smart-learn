@@ -1,0 +1,381 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support | SmartLearn</title>
+    <meta name="description"
+        content="Get help with your SmartLearn account, courses, and technical issues. Contact our support team today.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="alternate icon" href="assets/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .support-hero {
+            padding: 160px 0 80px;
+            background: linear-gradient(135deg, var(--secondary) 0%, #064e4b 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .support-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .support-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            padding: 100px 0;
+            align-items: start;
+        }
+
+        .contact-info-cards {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            background: var(--primary-light);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+        }
+
+        .contact-card h3 {
+            color: var(--secondary);
+            margin-bottom: 0.25rem;
+            font-size: 1.25rem;
+        }
+
+        .contact-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .support-form-container {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .support-form-container h2 {
+            color: var(--secondary);
+            margin-bottom: 2rem;
+            font-weight: 800;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px var(--primary-light);
+        }
+
+        .form-textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .topics-section {
+            padding: 80px 0;
+            background: var(--surface);
+        }
+
+        .topics-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .topic-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--secondary);
+            font-weight: 600;
+            padding: 1rem;
+            background: var(--white);
+            border-radius: 12px;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .topic-item:hover {
+            color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        @media (max-width: 992px) {
+            .support-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .support-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .support-form-container {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav id="main-nav">
+                <a href="index.html" class="logo">
+                    <img src="assets/logo.png" alt="SmartLearn Logo">
+                    Smart<span>Learn</span>
+                </a>
+                                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="home-digital.html">Home2</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="header-actions">
+                    <div class="user-menu-container">
+                        <button class="user-menu-btn" aria-label="User Account">
+                            <i class="fas fa-user"></i>
+                        </button>
+                        <div class="user-dropdown">
+                            <a href="login.html" class="dropdown-item"><i class="fas fa-sign-in-alt"></i> Log In</a>
+                            <a href="signup.html" class="dropdown-item"><i class="fas fa-user-plus"></i> Sign Up</a>
+                        </div>
+                    </div>
+                    <a href="signup.html" class="btn btn-primary hide-mobile">Join Now</a>
+                    <div class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="support-hero">
+            <div class="container" data-reveal>
+                <h1>Help <span style="color: var(--primary-light);">Center</span></h1>
+                <p>We're here to support your learning journey. Find answers, contact our team, or submit a request.</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="support-grid">
+                <div class="contact-options" data-reveal>
+                    <h2 style="color: var(--secondary); margin-bottom: 2rem; font-weight: 800; font-size: 2.2rem;">Get
+                        in Touch</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 3rem; line-height: 1.8;">Choose your preferred
+                        way to connect with us. Our support team is available Monday through Friday, 9:00 AM to 6:00 PM
+                        EST.</p>
+
+                    <div class="contact-info-cards">
+                        <div class="contact-card">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>Email Support</h3>
+                                <p>support@smartlearn.com</p>
+                                <p>Response within 24 hours</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h3>Phone Support</h3>
+                                <p>+1 (555) 123-4567</p>
+                                <p>Mon-Fri, 9am-6pm EST</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <i class="fas fa-comments"></i>
+                            <div>
+                                <h3>Live Chat</h3>
+                                <p>Available for Premium Users</p>
+                                <p>Real-time technical assistance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="support-form-container" data-reveal>
+                    <h2>Submit a Request</h2>
+                    <form id="support-form">
+                        <div class="form-group">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-input" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-input" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Topic</label>
+                            <select class="form-input">
+                                <option>General Inquiry</option>
+                                <option>Technical Issue</option>
+                                <option>Billing & Payments</option>
+                                <option>Course Access</option>
+                                <option>Certificate Support</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-textarea" placeholder="How can we help you?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.2rem;">Send
+                            Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <section class="topics-section">
+            <div class="container" data-reveal>
+                <div class="topics-header">
+                    <h2 style="color: var(--secondary); font-size: 2.2rem; font-weight: 800;">Common Support Topics</h2>
+                    <p style="color: var(--text-muted); margin-top: 1rem;">Quick links to help you find what you need
+                    </p>
+                </div>
+                <div class="topic-grid">
+                    <a href="faq.html#account" class="topic-item"><i class="fas fa-user-circle"></i> Account
+                        Management</a>
+                    <a href="faq.html#billing" class="topic-item"><i class="fas fa-credit-card"></i> Billing &
+                        Refunds</a>
+                    <a href="faq.html#courses" class="topic-item"><i class="fas fa-book-open"></i> Course Navigation</a>
+                    <a href="faq.html#certificates" class="topic-item"><i class="fas fa-certificate"></i> Certificates &
+                        Grades</a>
+                    <a href="faq.html#technical" class="topic-item"><i class="fas fa-laptop-code"></i> Technical
+                        Requirements</a>
+                    <a href="faq.html#enrollment" class="topic-item"><i class="fas fa-user-plus"></i> Enrollment
+                        Process</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="logo">
+                        <img src="assets/logo.png" alt="SmartLearn Logo"> Smart<span>Learn</span>
+                    </a>
+                    <p>Empowering minds through accessible, high-quality online education. Grow your skills, grow your future.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="home-digital.html">Home2</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@smartlearn.com">info@smartlearn.com</a></li>
+                        <li><a href="#">+1 (555) 123-4567</a></li>
+                        <li>
+                            <div class="socials" style="display: flex; gap: 1rem; margin-top: 1rem;">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SmartLearn Education. All rights reserved. Designed for clarity and growth.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

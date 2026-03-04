@@ -1,0 +1,485 @@
+/* ════════════════════════════════════════════════
+   AUTH PAGES — Shared Styles
+   Applies to: login.html, admin-login.html,
+               user-login.html, reset-password.html
+   ════════════════════════════════════════════════ */
+
+/* ── Container: perfect centered viewport ── */
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(ellipse at 80% 10%, var(--primary-light) 0%, #ffffff 60%);
+    padding: 2.5rem 1.5rem;
+}
+
+/* ── Card ── */
+.auth-box {
+    background: #ffffff;
+    width: 100%;
+    max-width: 460px;
+    border-radius: 24px;
+    box-shadow: 0 8px 40px rgba(6, 78, 59, 0.10), 0 1px 4px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(16, 185, 129, 0.10);
+    padding: 2.75rem 2.5rem 2.25rem;
+}
+
+/* ── Header block ── */
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--secondary);
+    text-decoration: none;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.02em;
+}
+
+.auth-logo img {
+    height: 34px;
+    width: auto;
+}
+
+.auth-logo span {
+    color: var(--primary);
+}
+
+.auth-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--secondary);
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+}
+
+.auth-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* ── Form structure ── */
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.45rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.88rem 1.1rem;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text-main, #111827);
+    background: #fafafa;
+    transition: var(--transition);
+    outline: none;
+}
+
+.form-input::placeholder {
+    color: #adb5bd;
+}
+
+.form-input:focus {
+    border-color: var(--primary);
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.12);
+}
+
+/* ── Forgot password row ── */
+.forgot-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.forgot-link {
+    font-size: 0.83rem;
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.forgot-link:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* ── Primary submit button ── */
+.auth-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    height: 50px;
+    padding: 0 1.5rem;
+    background: var(--primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.975rem;
+    cursor: pointer;
+    transition: var(--transition);
+    letter-spacing: 0.01em;
+}
+
+.auth-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(16, 185, 129, 0.25);
+}
+
+.auth-btn:active {
+    transform: translateY(0);
+}
+
+/* ── Footer: "Don't have an account?" ── */
+.auth-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid #f1f5f3;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.auth-link {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.auth-link:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* ── Back to Home ── */
+.auth-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-top: 1.25rem;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.auth-back:hover {
+    color: var(--secondary);
+}
+
+/* ══════════════════════════════════════════
+   ROLE DIVIDER + ROLE BUTTONS
+   ══════════════════════════════════════════ */
+
+.role-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin: 1.5rem 0 1rem;
+    color: #94a3b8;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.role-divider::before,
+.role-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e8edf2;
+}
+
+.role-divider span {
+    white-space: nowrap;
+}
+
+/* ── Side-by-side role buttons ── */
+.role-login-btns {
+    display: flex;
+    gap: 0.75rem;
+    align-items: stretch;
+}
+
+.role-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    height: 46px;
+    padding: 0 1rem;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: var(--transition);
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+}
+
+/* Admin button — dark with orange accent */
+.role-btn-admin {
+    background: #0f172a;
+    color: #f97316;
+    border-color: #1e293b;
+}
+
+.role-btn-admin:hover {
+    background: #1e293b;
+    border-color: #f97316;
+    box-shadow: 0 4px 14px rgba(249, 115, 22, 0.2);
+    transform: translateY(-2px);
+}
+
+/* User button — light green */
+.role-btn-user {
+    background: var(--primary-light, #d1fae5);
+    color: var(--primary-dark, #059669);
+    border-color: rgba(16, 185, 129, 0.35);
+}
+
+.role-btn-user:hover {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.22);
+    transform: translateY(-2px);
+}
+
+.role-btn:active {
+    transform: translateY(0);
+}
+
+/* ══════════════════════════════════════════
+   PASSWORD TOGGLE
+   ══════════════════════════════════════════ */
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 1.1rem;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #adb5bd;
+    transition: var(--transition);
+    font-size: 0.95rem;
+    z-index: 2;
+    line-height: 1;
+}
+
+.password-toggle:hover {
+    color: var(--secondary);
+}
+
+.password-toggle:active {
+    transform: translateY(-50%) scale(0.92);
+}
+
+.password-wrapper .form-input {
+    padding-right: 2.75rem;
+}
+
+/* ══════════════════════════════════════════
+   TOAST NOTIFICATIONS
+   ══════════════════════════════════════════ */
+
+.toast-container {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    pointer-events: none;
+}
+
+.toast {
+    background: #ffffff;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    min-width: 300px;
+    border-left: 4px solid var(--primary);
+    animation: toastSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: all;
+}
+
+.toast.success {
+    border-left-color: var(--primary);
+}
+
+.toast.error {
+    border-left-color: #ef4444;
+}
+
+.toast-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 1.05rem;
+    flex-shrink: 0;
+}
+
+.toast.error .toast-icon {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+.toast-content h4 {
+    font-size: 0.925rem;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 0.15rem;
+}
+
+.toast-content p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.toast-close {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.toast-close:hover {
+    color: var(--secondary);
+}
+
+@keyframes toastSlideIn {
+    from {
+        transform: translateX(120%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes toastSlideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(120%);
+        opacity: 0;
+    }
+}
+
+.toast.hiding {
+    animation: toastSlideOut 0.28s ease forwards;
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════ */
+
+@media (max-width: 520px) {
+    .auth-container {
+        padding: 1.5rem 1rem;
+        align-items: flex-start;
+        padding-top: 2.5rem;
+    }
+
+    .auth-box {
+        padding: 2rem 1.5rem 1.75rem;
+        border-radius: 20px;
+    }
+
+    .auth-title {
+        font-size: 1.4rem;
+    }
+
+    .role-login-btns {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .role-btn {
+        height: 48px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .auth-box {
+        padding: 1.75rem 1.25rem 1.5rem;
+    }
+
+    .toast {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .toast-container {
+        top: 1rem;
+        right: 1rem;
+        left: 1rem;
+    }
+
+    .toast {
+        min-width: auto;
+    }
+}
